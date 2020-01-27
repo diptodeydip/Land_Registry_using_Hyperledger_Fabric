@@ -1,0 +1,23 @@
+
+{{#if error}}
+    <div class="alert alert-danger">
+    <ul>
+        <li>Password Didn't Match</li>
+    </ul>
+</div>
+{{/if}} 
+
+
+ <form action="/admin/loginAsAdmin" method="post">
+  <div class="imgcontainer">
+    <img src="/images/login.png" alt="Avatar" class="login" height="70" width="400" >
+  </div>
+
+  <div class="container">
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    
+    <button type="submit" class="custom1">Login</button>
+  </div>
+
+</form> 

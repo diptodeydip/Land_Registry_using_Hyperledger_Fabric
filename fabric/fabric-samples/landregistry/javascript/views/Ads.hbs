@@ -1,0 +1,37 @@
+ {{#if success}}
+    <div class="alert alert-success">
+    <ul>
+        <li>Request Sent</li>
+    </ul>
+</div>
+{{/if}} 
+ 
+ <table border="1" class="content-table table-hover" style="width:100%">
+  <thead>
+  <tr>
+    <th>Index</th>
+    <th>Code/Key</th>
+    <th>AssetName</th>
+    <th>OwnerName</th>
+    <th>OwnerNID</th>
+    <th>Upload-Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{# each obj}}
+  
+  <tr>
+    <td></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/asset/ViewAsset/' this.Key}}">{{this.Key}}</a></td>
+    {{!-- <td align="center"><a style="text-decoration:none;color:black;" href="#"><img src="{{this.Record.LocationImage}}" class="img-thumbnail" 
+                                                              style="height:300px; width:350px;"alt="templatemo easy profile"></a></td> --}}
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/asset/ViewAsset/' this.Key}}">{{this.Record.AssetName}}</a></td>
+     <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/asset/ViewAsset/' this.Key}}">{{this.Record.OwnerName}}</a></td>
+     <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/asset/ViewAsset/' this.Key}}">{{this.Record.OwnerNID}}</a></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/asset/ViewAsset/' this.Key}}">{{this.Record.UploadTime}}</a></td>
+  </tr>
+  {{/each}}
+</table> 
+</tbody>
+
+{{!-- {{result}} --}}

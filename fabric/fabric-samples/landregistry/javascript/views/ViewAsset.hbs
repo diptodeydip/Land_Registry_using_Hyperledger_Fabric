@@ -1,0 +1,93 @@
+ {{#if success}}
+    <div class="alert alert-success">
+    <ul>
+        <li>Changed</li>
+    </ul>
+</div>
+{{/if}} 
+ <table   style="width:100%;border-spacing:2em;border-collapse:separate;border: 1px solid black;">
+
+  <tr>
+    <td align="center">Code/Key :</td>
+    <td align="center">{{key}}</td>
+  </tr>
+  <tr>
+    <td align="center">Location :</td>
+    <td align="center"><img src="{{obj.LocationImage}}" class="img-thumbnail"  style="height:300px; width:350px;border: 1px solid grey;"alt="templatemo easy profile"></td>
+  </tr>
+
+  <tr>
+    <td align="center">Division :</td>
+    <td align="center">{{obj.Division}}</td>
+  </tr>
+  <tr>
+    <td align="center">District :</td>
+    <td align="center">{{obj.District}}</td>
+  </tr>
+  
+  <tr>
+    <td align="center">MaujaNo_JL :</td>
+    <td align="center">{{obj.MaujaNo_JL}}</td>
+  </tr>
+  <tr>
+    <td align="center">Khatian No :</td>
+    <td align="center">{{obj.KhatianNo}}</td>
+  </tr>
+  <tr>
+    <td align="center">Plot No :</td>
+    <td align="center">{{obj.PlotNo}}</td>
+  </tr>
+
+  <tr>
+    <td align="center">AssetName :</td>
+    <td align="center">{{obj.AssetName}}</td>
+  </tr>
+  <tr>
+    <td align="center">UploadTime :</td>
+    <td align="center">{{obj.UploadTime}}</td>
+  </tr>
+  <tr>
+    <td align="center">Is-Advertised :</td>
+    <td align="center">{{obj.Advertised}}</td>
+  </tr>
+  <tr>
+    <td align="center">OwnerName :</td>
+    <td align="center">{{obj.OwnerName}}</td>
+  </tr>
+  <tr>
+    <td align="center">OwnerNID :</td>
+    <td align="center">{{obj.OwnerNID}}</td>
+  </tr>
+
+  {{#if pending}}
+    <tr>
+            <td align="center"></td>
+            <td align="center">This asset has been requested to buy by someone <a  href="{{joinPath '/request/ViewRequest/' requestkey}}">See Request</a></td>
+             </tr>
+  {{else}}
+    {{#if_eq obj.OwnerNID NID}}
+            {{#if_eq obj.Advertised 'Yes'}}
+            <tr>
+            <td align="center"></td>
+            <td align="center"><a href="{{joinPath '/asset/Advertise/' key}}"><button style="color: azure;">Remove from advertisement</button></a></td>
+             </tr>
+            {{else}}
+             <tr>
+             <td align="center"></td>
+             <td align="center"><a href="{{joinPath '/asset/Advertise/' key}}"><button style="color: azure;">Advertise for sell</button></a></td>
+            </tr>
+            {{/if_eq}}
+      <tr>
+      <td align="center"></td>
+      <td align="center"><a href="{{joinPath '/asset/deleteAsset/' key}}" onclick="return confirm('Are you sure you want to delete this?');" ><button class="custom2" style="color: azure;">Delete</button></a></td>
+     </tr>
+    {{else}}
+  <tr>
+    <td align="center"></td>
+    <td align="center"><a href="{{joinPath '/request/createRequest/' key}}"><button style="color: azure;">Send Buy Request</button></a></td>
+  </tr>
+    {{/if_eq}}
+  {{/if}}
+</table> 
+
+{{!-- {{result}} --}}

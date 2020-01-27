@@ -1,0 +1,60 @@
+
+<!-- preloader section -->
+<div class="preloader">
+	<div class="sk-spinner sk-spinner-wordpress">
+       <span class="sk-inner-circle"></span>
+     </div>
+</div>
+
+<!-- header section -->
+
+	<div class="container">
+		{{#if success}}
+   		<div class="alert alert-success">
+    	<ul>
+        	<li>Profile Updated</li>
+    	</ul>
+    	</div>
+  		{{/if}}
+
+		<div >
+		<h1 class="tm-title bold shadow" style="float: left; margin-top: 20px;">{{obj.Name}}</h1>
+		</div>
+				
+		<div class="row">
+			
+			<div class="col-md-12">
+				{{#if Check}}
+				<a class="btn btn-info" href="/user/editDp" style="float: right; margin-top: 20px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+				{{/if}}
+				<hr>
+				<img src="{{obj.ImageUrl}}" class="img-responsive img-circle tm-border" style="height:300px; width:350px;border: 1px solid grey;"alt="templatemo easy profile">
+				<hr>
+				<h1 class="tm-title bold shadow"></h1>
+			</div>
+		</div>
+	</div>
+<!-- contact and experience -->
+<section class="container" style="margin-bottom:100px">
+	{{#if Check}}
+	<a class="btn btn-info" href="/user/editInfo" style="float: right; margin-top: 20px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+	{{/if}}
+	<div class="row">
+		<div class="col-md-6">
+			<div class="contact">
+				<h2>Contact</h2>
+					<p><i class="fa fa-envelope">Email: {{obj.Email}}</i> </p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="experience">
+					<h2>Details</h2>
+					<div class="experience-content">
+				
+						<h4 class="experience-title accent">NID No: {{NID}}</h4>
+
+					</div>
+			</div>
+		</div>
+	</div>
+</section>

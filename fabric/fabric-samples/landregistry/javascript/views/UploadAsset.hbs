@@ -1,0 +1,42 @@
+{{#if success}}
+    <div class="alert alert-success">
+    <ul>
+        <li>Asset created </li>
+    </ul>
+</div>
+{{/if}}
+{{#if error}}
+    <div class="alert alert-danger">
+    <ul>
+        <li>Asset already Exists</li>
+    </ul>
+</div>
+{{/if}} 
+
+ <form action="/asset/upload" method="post" enctype="multipart/form-data">
+  <div class="container">
+    <label for="Division"><b>Division</b></label>
+    <input type="text" placeholder="Sylhet" name="Division" required>
+
+    <label for="District"><b>District</b></label>
+    <input type="text" placeholder="Sylhet" name="District" required>
+
+    <label for="MajuaNo_JL"><b>MajuaNo_JL</b></label>
+    <input type="text" placeholder="110" name="MaujaNo_JL" required>
+
+    <label for="KhatianNo"><b>Khatian No</b></label>
+    <input type="text" placeholder="1" name="KhatianNo" required>
+
+    <label for="PlotNo"><b>Plot No</b></label>
+    <input type="text" placeholder="12" name="PlotNo" required>
+
+    <label for="assetname"><b>AssetName</b></label>
+    <input type="text" placeholder="Enter Name" name="assetname" required>
+
+    <label for="assetLocation"><b>Upload Location</b></label>
+    <input class="file-path validate" id="fileInput" type="file" name="assetLocation" required>
+
+
+    <button type="submit" class="custom1">Upload</button>
+  </div>
+</form> 

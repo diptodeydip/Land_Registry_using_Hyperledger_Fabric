@@ -1,0 +1,220 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("/images/background.jpg");
+  background-attachment: fixed;
+  background-size: auto;
+  counter-reset: Serial;
+}
+
+
+a {
+  color: #00B7FF;
+}
+
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/*below is css for login & signup */
+
+/* Full-width inputs */
+input[type=text], input[type=password] ,input[type=email],input[type=file]  {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: grey;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+/*Extra style for login button */
+.custom1 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.custom2 {
+  background-color: red;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.5;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+
+/*css for navbar */
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #4CAF50;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+/* Table with system when cursor on a row it will be highlighted for row-clickable table class*/
+
+a:hover {cursor: pointer;}
+
+/* table.row-clickable tbody tr td {
+   border: 1px solid black; 
+  padding: 15px;
+} */
+
+table.row-clickable tbody tr td a {
+  /* border: 1px solid black; */
+  display: block;
+  padding: 15px;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  /* background-color: #009879; */
+  background-color: gray;
+  color: #000000;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+/* .content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+} */
+
+.content-table tbody tr:last-of-type {
+  /* border-bottom: 2px solid #414443; */
+  border-bottom: 2px solid #414443;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+.content-table tbody tr:hover td {
+  background: #4CAF50
+}
+
+/* 
+For creating auto index numbers */
+
+.content-table tr td:first-child:before
+{
+  counter-increment: Serial;      /* Increment the Serial counter */
+  content:  counter(Serial); /* Display the counter */
+  /* content: "Serial is: " counter(Serial); /* Display the counter */
+} 
+
+
+
+/* Search bar customization */
+.searchButton {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* For showing history in a scrollview*/
+.vertical-menu {
+  height: 500px;
+  overflow-y: auto;
+}

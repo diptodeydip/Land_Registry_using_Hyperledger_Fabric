@@ -1,0 +1,9 @@
+<h1>id no is {{output}}</h1>
+ 
+<a class="button" href="{{joinPath '/test1/:' output}}">click here</a>
+
+{{#if_eq check 'true'}}
+    {{joinPath '/test1/:' output}}
+{{else}}
+    {{check}}
+{{/if_eq}}

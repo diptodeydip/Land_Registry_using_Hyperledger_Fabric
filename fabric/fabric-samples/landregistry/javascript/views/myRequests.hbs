@@ -1,0 +1,36 @@
+ {{#if success}}
+    <div class="alert alert-success">
+    <ul>
+        <li>Request Successfully Deleted</li>
+    </ul>
+</div>
+{{/if}} 
+ 
+ <table border="1" class="content-table table-hover" style="width:100%">
+  <thead>
+  <tr>
+    <th>Index</th>
+    <th>Request Code</th>
+    <th>AssetName</th>
+    <th>OwnerNID</th>
+    <th>OwnerAck</th>
+    <th>Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each obj}}
+    {{#if_eq this.Record.RequestedByNID ../NID}}
+    <tr>
+      <td></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/request/ViewRequest/' this.Key}}">{{this.Key}}</a></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/request/ViewRequest/' this.Key}}">{{this.Record.AssetName}}</a></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/request/ViewRequest/' this.Key}}">{{this.Record.OwnerNID}}</a></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/request/ViewRequest/' this.Key}}">{{this.Record.OwnerAck}}</a></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/request/ViewRequest/' this.Key}}">{{this.Record.Time}}</a></td>
+    </tr>
+    {{/if_eq}}
+  {{/each}}
+</table> 
+</tbody>
+
+{{!-- {{result}} --}}

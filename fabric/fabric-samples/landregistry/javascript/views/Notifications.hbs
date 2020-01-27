@@ -1,0 +1,49 @@
+
+ <table border="1" class="content-table table-hover" style="width:100%">
+  <thead>
+  <tr>
+    <th>Index</th>
+    <th >Notifications</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each obj}}
+    {{#if_eq this.Record.NewOwnerNID ../NID}}
+    <tr>
+      <td></td>
+    <td align="center">AssetCode:<b>{{this.Record.AssetCode}}</b><br/>PreviousOwnerNID:<b>{{this.Record.PreviousOwnerNID}}</b><br/>
+    PreviousOwnerName:<b>{{this.Record.PreviousOwnerName}}</b>
+     <br/>has been transferred to you at {{this.Record.Time}}</td> 
+    </tr>
+    {{/if_eq}}
+    {{#if_eq this.Record.PreviousOwnerNID ../NID}}
+    <tr>
+      <td></td>
+    <td align="center">AssetCode:<b>{{this.Record.AssetCode}}</b><br/>has been transferred to<br/>
+    NID:<b>{{this.Record.NewOwnerNID}}</b> Name:<b>{{this.Record.NewOwnerName}}</b><br/>
+    at {{this.Record.Time}}
+    </td>
+    </tr>
+    {{/if_eq}}
+
+    {{#if_eq this.Record.OwnerNID ../NID}}
+    <tr>
+      <td></td>
+    <td align="center">Request for your  AssetCode:<b>{{this.Record.AssetCode}}</b><br/>by NID:<b>{{this.Record.RequestedByNID}}</b><br/>has been rejected by The Inspector
+    at {{this.Record.Time}}</td>
+    </tr>
+    {{/if_eq}}
+    {{#if_eq this.Record.RequestedByNID ../NID}}
+    <tr>
+      <td></td>
+    <td align="center">Your Request for AssetCode<b>:{{this.Record.AssetCode}}</b><br/>Owned By NID:<b>{{this.Record.OwnerNID}}</b><br/>has been rejected by The Inspector
+    at {{this.Record.Time}}
+    </td>
+    </tr>
+    {{/if_eq}}
+
+  {{/each}}
+  </tbody>
+</table> 
+
+{{!-- {{result}} --}}

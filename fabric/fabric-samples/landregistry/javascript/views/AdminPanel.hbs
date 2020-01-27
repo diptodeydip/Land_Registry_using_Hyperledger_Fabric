@@ -1,0 +1,45 @@
+
+ {{#if_eq success "accepted"}}
+    <div class="alert alert-success">
+    <ul>
+        <li>OwnerShip has been Changed according to the request</li>
+    </ul>
+</div>
+{{/if_eq}} 
+ {{#if_eq success "rejected"}}
+ <div class="alert alert-success">
+    <ul>
+        <li>Request Rejected</li>
+    </ul>
+</div>
+{{/if_eq}}
+
+{{!-- class="table table-hover row-clickable" --}}
+ <table  border="1" class="content-table table-hover" style="width:100%; margin-top: 25px;">
+  <thead>
+  <tr>
+    <th>Index</th>
+    <th>Request Code</th>
+    <th>AssetName</th>
+    <th>OwnerNID</th>
+    <th>RequestedBy(NID)</th>
+    <th>Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each obj}}
+    {{#if_eq this.Record.OwnerAck "1"}}
+    <tr>
+      <td></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/admin/ViewRequest/' this.Key}}">{{this.Key}}</a></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/admin/ViewRequest/' this.Key}}">{{this.Record.AssetName}}</a></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/admin/ViewRequest/' this.Key}}">{{this.Record.OwnerNID}}</a></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/admin/ViewRequest/' this.Key}}">{{this.Record.RequestedByNID}}</a></td>
+    <td align="center"><a style="text-decoration:none;color:black;" href="{{joinPath '/admin/ViewRequest/' this.Key}}">{{this.Record.Time}}</a></td>
+    </tr>
+    {{/if_eq}}
+  {{/each}}
+  </tbody>
+</table> 
+
+{{!-- {{result}} --}}

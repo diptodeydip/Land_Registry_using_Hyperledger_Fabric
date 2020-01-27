@@ -1,0 +1,83 @@
+ <table   style="width:100%;border-spacing:2em;border-collapse:separate;border: 1px solid black;">
+
+  <tr>
+    <td align="center">Request Code :</td>
+    <td align="center">{{key}}</td>
+  </tr>
+  <tr>
+    <td align="center">AssetCode :</td>
+    <td align="center">{{obj.AssetCode}}</td>
+  </tr>
+  <tr>
+    <td align="center">AssetName :</td>
+    <td align="center">{{obj.AssetName}}</td>
+  </tr>
+  <tr>
+    <td align="center">OwnerNID:</td>
+    <td align="center">{{obj.OwnerNID}}</td>
+  </tr>
+  <tr>
+    <td align="center">OwnerName:</td>
+    <td align="center">{{obj.OwnerName}}</td>
+  </tr>
+  <tr>
+    <td align="center">Request By (Name) :</td>
+    <td align="center">{{obj.RequestedByName}}</td>
+  </tr>
+  <tr>
+    <td align="center">Request By (NID) :</td>
+    <td align="center">{{obj.RequestedByNID}}</td>
+  </tr>
+  <tr>
+    <td align="center">OwnerAck :</td>
+    <td align="center">{{obj.OwnerAck}}</td>
+  </tr>
+    <tr>
+    <td align="center">Time :</td>
+    <td align="center">{{obj.Time}}</td>
+  </tr>
+    {{#if Admin}}
+            <tr>
+              <td align="center"></td>
+            <td align="center"><a href="{{joinPath '/admin/acceptRequest/' key}}" onclick="return confirm('Are you sure you want to accept this?');"
+            ><button class="custom1" style="color: azure;">Grant</button></a></td>
+            </tr>
+            <tr>
+            <td align="center"></td>
+             <td align="center"><a href="{{joinPath '/admin/rejectRequest/' key}}" onclick="return confirm('Are you sure you want to reject this?');"
+             ><button class="custom2" style="color: azure;">Reject</button></a></td>
+             </tr>
+    {{else}}
+
+        {{#if_eq obj.OwnerAck "1"}}
+              <tr>
+            <td align="center"></td>
+            <td align="center">This request is waiting for Inspector's Verification</td>
+             </tr>
+        {{else}}
+
+              {{#if_eq obj.RequestedByNID NID}}
+              <tr>
+              <td align="center"></td>
+              <td align="center"><a href="{{joinPath '/request/deleteRequest/' key}}" onclick="return confirm('Are you sure you want to delete this ?');"
+              ><button class="custom2" style="color: azure;">Delete Request</button></a></td>
+              </tr>
+              {{else}}
+              <tr>
+              <td align="center"></td>
+              <td align="center"><a href="{{joinPath '/request/acceptRequest/' key}}" onclick="return confirm('Are you sure you want to accept this?');"
+              ><button class="custom1" style="color: azure;">Accept</button></a></td>
+              </tr>
+              <tr>
+              <td align="center"></td>
+              <td align="center"><a href="{{joinPath '/request/rejectRequest/' key}}" onclick="return confirm('Are you sure you want to reject this?');"
+              ><button class="custom2" style="color: azure;">Reject</button></a></td>
+             </tr>
+          
+              {{/if_eq}}
+
+          {{/if_eq}}
+    {{/if}}
+</table> 
+
+{{!-- {{result}} --}}

@@ -1,0 +1,36 @@
+{{!-- <div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="What are you looking for?">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+</div> --}}
+  {{#if error}}
+    <div class="alert alert-danger">
+    <ul>
+        <li>Asset Doesn't Exist</li>
+    </ul>
+  </div>
+  {{/if}}
+
+
+ {{#if AdminPage}}
+<form action="/admin/searchAsset" method="post">
+  
+  <div class="container">
+    <label for="assetCode"><b>Search Asset</b></label>
+    <input type="text" placeholder="Asset Code" name="code" required>
+    <button type="submit" class="searchButton" style="float: right;"> <i class="fa fa-search"></i></button>
+  </div>
+</form>
+ {{else}}
+ <form action="/asset/searchAsset" method="post">
+  
+  <div class="container">
+    <label for="assetCode"><b>Search Asset</b></label>
+    <input type="text" placeholder="Asset Code" name="code" required>
+    <button type="submit" class="searchButton" style="float: right;"> <i class="fa fa-search"></i></button>
+  </div>
+</form> 
+{{/if}}

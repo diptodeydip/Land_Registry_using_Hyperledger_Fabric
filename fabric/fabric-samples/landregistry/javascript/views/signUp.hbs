@@ -1,0 +1,49 @@
+  {{#if nidexists}}
+    <div class="alert alert-danger">
+    <ul>
+        <li>NID already exists</li>
+    </ul>
+  </div>
+  {{/if}}
+   {{#if passerror}}
+    <div class="alert alert-danger">
+    <ul>
+        <li>Password didn't match</li>
+    </ul>
+    </div>
+  {{/if}}
+
+ 
+ <form action="/user/register" method="post" enctype="multipart/form-data">
+  <div class="imgcontainer">
+    <img src="/images/signUp.png" alt="Avatar" class="signUp" height="100" width="150">
+  </div>
+
+  <div class="container">
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter username" name="username" required>
+
+    <label for="NID"><b>NID</b></label>
+    <input type="text" placeholder="Enter NID" name="NID" required>
+
+     <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="y@y.com" name="email" required>
+
+
+    <label for="profileimage"><b>Upload Image</b></label>
+    <input class="file-path validate" id="fileInput" type="file" name="profileimage" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <label for="confirmpassword"><b>Confirm Password</b></label>
+    <input type="password" placeholder="Confirm Password" name="confirmpassword" required>
+
+
+    <button type="submit" class="custom1">Sign Up</button>
+  </div>
+
+  <div class="container" >
+    <span class="psw">Already have an  account? <a href="/user">Log In</a></span>
+  </div>
+</form> 

@@ -1,0 +1,53 @@
+{{!-- {{ title }}
+</br>
+
+{{obj1.t}}
+</br>
+{{Array.[0]}}
+</br>
+
+{{# each Array as |val key|}}
+    </br>{{key}}: {{val}}
+{{/each}}
+
+</br>
+--}}
+{{!-- <form action="/submit" method='post'>
+<input type="text" name="id">
+<button type="submit">submit</button>
+</form> --}}
+{{#if success}}
+    <div class="alert alert-success">
+    <ul>
+        <li>Account Created </li>
+    </ul>
+</div>
+{{/if}} 
+{{#if error}}
+    <div class="alert alert-danger">
+    <ul>
+        <li>Something went wrong</li>
+    </ul>
+</div>
+{{/if}} 
+
+
+ <form action="/user/login" method="post">
+  <div class="imgcontainer">
+    <img src="/images/login.png" alt="Avatar" class="login" height="70" width="400" >
+  </div>
+
+  <div class="container">
+    <label for="NID"><b>NID</b></label>
+    <input type="text" placeholder="Enter NID" name="NID" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    
+    <button type="submit" class="custom1">Login</button>
+  </div>
+
+  <div class="container" >
+    <span class="psw">Don't have an  account? <a href="/user/signUp">Sign Up here</a></span>
+  </div>
+</form> 

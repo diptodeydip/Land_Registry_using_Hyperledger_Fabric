@@ -1,0 +1,33 @@
+
+   {{#if passerror}}
+    <div class="alert alert-danger">
+    <ul>
+        <li>Password didn't match</li>
+    </ul>
+    </div>
+  {{/if}}
+
+ 
+ <form action="/user/updateInfo" method="post">
+  <div class="imgcontainer">
+    <img src="/images/editProfile.png" alt="Avatar" class="signUp" height="100" width="150">
+  </div>
+
+  <div class="container">
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder={{obj.Name}} name="username" value={{obj.Name}} required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder={{obj.Email}} name="email" value={{obj.Email}} required>
+
+
+    <label for="password"><b>New Password</b></label>
+    <input type="text" placeholder={{obj.Password}} name="password" value={{obj.Password}} required>
+
+    <label for="confirmpassword"><b>Confirm Password</b></label>
+    <input type="text" placeholder={{obj.Password}} name="confirmpassword"  value={{obj.Password}} required>
+
+
+    <button type="submit" class="custom1">Update</button>
+  </div>
+</form> 
