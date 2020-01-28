@@ -2,11 +2,12 @@
 Overview
 In our traditional land registry system ownership information of any particular land is
 stored using paperwork and requires an office to manage this.
-Our o
-bjective​ is to store these information in a system using blockchain technology.
+Our objective​ is to store these information in a system using blockchain technology.
 Activities like transformation of ownership can be held through this system.
 Therefore, these information will remain safe & secured.
+
 User Manual
+
 To be a user one need to create an account
 
 User of that system can upload their Asset’s Information
