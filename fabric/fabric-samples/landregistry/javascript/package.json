@@ -14,7 +14,7 @@
     "express-session": "^1.17.0",
     "express-validator": "^5.3.1",
     "http-errors": "~1.6.3",
-    "kill-port-process": "2.1.0",
+    "kill-port-process": "2.2.1",
     "morgan": "~1.9.1",
     "multer": "^1.4.2"
   }
