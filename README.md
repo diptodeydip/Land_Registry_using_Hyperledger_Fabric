@@ -26,7 +26,7 @@ Transfer of ownership is verified by an Inspector
 
 # Product Description
 We have used :
-1. Hyperledger Fabric as our Blockchain Network .
+1. Hyperledger Fabric as our  private Blockchain Network .
 2. Node Js , Express Js as Web Framework.
 3. Handlebars as View Engine.
 
